@@ -1,0 +1,19 @@
+services:
+  web-dashboard:
+    build:
+      context: /mnt/oz-dashboard
+      dockerfile: Dockerfile
+    image: web-dashboard
+    container_name: web-dashboard
+    hostname: web-dashboard
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

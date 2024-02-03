@@ -1,0 +1,19 @@
+services:
+  svc-hosting:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Hosting.Dockerfile
+    image: svc-hosting
+    container_name: svc-hosting
+    hostname: svc-hosting
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

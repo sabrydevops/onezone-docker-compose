@@ -1,0 +1,19 @@
+services:
+  svc-subscription:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Subscription.Dockerfile
+    image: svc-subscription
+    container_name: svc-subscription
+    hostname: svc-subscription
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

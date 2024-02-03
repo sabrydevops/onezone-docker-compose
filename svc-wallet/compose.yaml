@@ -1,0 +1,19 @@
+services:
+  svc-wallet:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Wallet.Dockerfile
+    image: svc-wallet
+    container_name: svc-wallet
+    hostname: svc-wallet
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

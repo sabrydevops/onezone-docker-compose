@@ -1,0 +1,19 @@
+services:
+  svc-email:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Email.Dockerfile
+    image: svc-email
+    container_name: svc-email
+    hostname: svc-email
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

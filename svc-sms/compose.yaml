@@ -1,0 +1,19 @@
+services:
+  svc-sms:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: SMS.Dockerfile
+    image: svc-sms
+    container_name: svc-sms
+    hostname: svc-sms
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

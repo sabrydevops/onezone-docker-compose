@@ -1,0 +1,20 @@
+services:
+  website:
+    build:
+      context: /mnt/oz-website
+      dockerfile: Dockerfile
+    image: oz-website
+    container_name: oz-website
+    hostname: oz-website
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+
+networks:
+  npm:
+    external: true

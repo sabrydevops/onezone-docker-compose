@@ -1,0 +1,19 @@
+services:
+  svc-notification:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Notification.Dockerfile
+    image: svc-notification
+    container_name: svc-notification
+    hostname: svc-notification
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

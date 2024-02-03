@@ -1,0 +1,21 @@
+services:
+  web-hostportal:
+    build:
+      context: /mnt/oz-hostportal
+      dockerfile: Dockerfile
+    image: web-hostportal
+    container_name: web-hostportal
+    hostname: web-hostportal
+    restart: unless-stopped
+    expose:
+      - 80
+      - 8090
+    networks:
+      - npm
+
+
+
+
+networks:
+  npm:
+    external: true

@@ -1,0 +1,19 @@
+services:
+  svc-payment:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Payment.Dockerfile
+    image: svc-payment
+    container_name: svc-payment
+    hostname: svc-payment
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true

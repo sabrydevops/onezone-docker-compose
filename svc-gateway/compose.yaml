@@ -1,0 +1,19 @@
+services:
+  svc-gateway:
+    build:
+      context: /mnt/oz-backend/Src/
+      dockerfile: Gateway.Dockerfile
+    image: svc-gateway
+    container_name: svc-gateway
+    hostname: svc-gateway
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+
+
+
+networks:
+  npm:
+    external: true
